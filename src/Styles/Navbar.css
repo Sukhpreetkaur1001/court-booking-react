@@ -1,0 +1,171 @@
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 50px;
+  background:black;
+}
+
+/* RIGHT MENU */
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:25px;
+}
+
+/* NAV LINKS */
+.nav-right a{
+  color:white;
+  text-decoration:none;
+  font-size:16px;
+  font-weight:500;
+  transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.nav-right a:hover{
+  color:#00e676;
+  transform: translateY(-4px);
+}
+
+/* CLICK ANIMATION */
+.nav-right a:active{
+  animation: navBounce 0.4s ease 3;
+}
+
+/* BOUNCE KEYFRAMES */
+@keyframes navBounce{
+
+  0%{
+    transform: translateY(0);
+  }
+
+  25%{
+    transform: translateY(-8px);
+  }
+
+  50%{
+    transform: translateY(6px);
+  }
+
+  75%{
+    transform: translateY(-4px);
+  }
+
+  100%{
+    transform: translateY(0);
+  }
+
+}
+
+/* LOGIN BUTTON */
+.login-btn{
+  border:1px solid #00e676;
+  padding:8px 18px;
+  border-radius:6px;
+  margin-bottom: 2%;
+}
+
+/* SIGNUP BUTTON */
+.signup-btn{
+  background:#00e676;
+  color:black !important;
+  padding:8px 18px;
+  border-radius:6px;
+}
+
+/* THEME BUTTON */
+.theme-btn{
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* LOGO */
+.logo-img{
+  height:45px;
+}
+
+/* BOUNCE ANIMATION */
+@keyframes bounce{
+
+  0%{transform: translateY(0);}
+
+  30%{transform: translateY(-7px);}
+
+  50%{transform: translateY(4px);}
+
+  70%{transform: translateY(-3px);}
+
+  100%{transform: translateY(0);}
+
+}
+.profile{
+position:relative;
+cursor:pointer;
+color:white;
+}
+
+.dropdown{
+position:absolute;
+top:35px;
+right:0;
+background:white;
+color:black;
+padding:10px;
+border-radius:5px;
+box-shadow:0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.dropdown button{
+margin-top:8px;
+padding:5px 10px;
+border:none;
+background:red;
+color:white;
+cursor:pointer;
+}
+.profile{
+position: relative;
+cursor: pointer;
+}
+
+.user-name{
+color: white;
+font-weight: 500;
+margin-left: 20px;
+}
+
+.dropdown{
+position: absolute;
+top: 40px;
+right: 0;
+background: white;
+width: 200px;
+border-radius: 10px;
+box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+padding: 15px;
+text-align: center;
+z-index: 100;
+}
+
+.dropdown p{
+margin-bottom: 10px;
+font-size: 14px;
+color: #555;
+}
+
+.dropdown button{
+width: 100%;
+padding: 8px;
+border: none;
+border-radius: 6px;
+background: #ff4d4d;
+color: white;
+font-weight: 500;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.dropdown button:hover{
+background: #e60000;
+}
