@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import premiumImg from "../assets/tennis.png";
 import indoorImg from "../assets/court1.jpg";
 import outdoorImg from "../assets/court2.jpg";
-import "../styles/Home.css";
+import "../Styles/Home.css";
 
 function Home(){
 
