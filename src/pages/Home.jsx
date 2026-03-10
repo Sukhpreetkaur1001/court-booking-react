@@ -58,7 +58,7 @@ function Home(){
 
       {/* FEATURED COURTS */}
 
-      <div className="container py-5">
+      <div className="container-fluid py-5">
 
         <h2 className="section-title text-center mb-5">
           Featured Courts
@@ -68,7 +68,7 @@ function Home(){
 
           {courts.map((court,index)=>(
 
-            <div className="col-lg-4 col-md-6 mb-4" key={index}>
+            <div className="col-lg-12 col-md-6 mb-4" key={index}>
 
               <div className="court-card">
 

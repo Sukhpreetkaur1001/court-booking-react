@@ -3,111 +3,111 @@ import { useState, useEffect } from "react"
 import logo from "../assets/Logo.svg"
 import "../Styles/Navbar.css"
 
-function Navbar(){
+function Navbar() {
 
-const [user,setUser] = useState(null)
-const [loginTime,setLoginTime] = useState("")
-const [showMenu,setShowMenu] = useState(false)
+    const [user, setUser] = useState(null)
+    const [loginTime, setLoginTime] = useState("")
+    const [showMenu, setShowMenu] = useState(false)
 
-useEffect(()=>{
+    useEffect(() => {
 
-const checkUser = ()=>{
+        const checkUser = () => {
 
-const storedUser = JSON.parse(localStorage.getItem("user"))
-const storedTime = localStorage.getItem("loginTime")
+            const storedUser = JSON.parse(localStorage.getItem("user"))
+            const storedTime = localStorage.getItem("loginTime")
 
-if(storedUser){
-setUser(storedUser.name)
-setLoginTime(storedTime)
-}
+            if (storedUser) {
+                setUser(storedUser.name)
+                setLoginTime(storedTime)
+            }
 
-}
+        }
 
-checkUser()
+        checkUser()
 
-window.addEventListener("userLogin",checkUser)
+        window.addEventListener("userLogin", checkUser)
 
-return ()=> window.removeEventListener("userLogin",checkUser)
+        return () => window.removeEventListener("userLogin", checkUser)
 
-},[])
+    }, [])
 
-const handleLogout = ()=>{
+    const handleLogout = () => {
 
-localStorage.removeItem("user")
-localStorage.removeItem("loginTime")
+        localStorage.removeItem("user")
+        localStorage.removeItem("loginTime")
 
-setUser(null)
-setShowMenu(false)
+        setUser(null)
+        setShowMenu(false)
 
-}
+    }
 
-return(
+    return (
 
-<nav className="navbar">
+        <nav className="navbar">
 
-<div className="nav-left">
-<img src={logo} className="logo-img"/>
-</div>
+            <div className="nav-left">
+                <img src={logo} className="logo-img" />
+            </div>
 
-<div className="nav-right">
+            <div className="nav-right">
 
-<Link className="nav-item" to="/">Home</Link>
-<Link className="nav-item" to="/courts">Courts</Link>
-<Link className="nav-item" to="/booking">Booking</Link>
+                <Link className="nav-item" to="/">Home</Link>
+                <Link className="nav-item" to="/courts">Courts</Link>
+                <Link className="nav-item" to="/booking">Booking</Link>
 
-{user ? (
+                {user ? (
 
-<div className="profile">
+                    <div className="profile">
 
-<span
-className="user-name"
-onClick={()=>setShowMenu(!showMenu)}
->
-Hi, {user}
-</span>
+                        <span
+                            className="user-name"
+                            onClick={() => setShowMenu(!showMenu)}
+                        >
+                            Hi, {user}
+                        </span>
 
-{showMenu && (
+                        {showMenu && (
 
-<div className="dropdown">
+                            <div className="dropdown">
 
-<button className="time-btn">
-⏰ Login Time : {loginTime}
-</button>
+                                <button className="time-btn">
+                                    ⏰ Login Time : {loginTime}
+                                </button>
 
-<button
-className="logout-btn"
-onClick={handleLogout}
->
-Logout
-</button>
+                                <button
+                                    className="logout-btn"
+                                    onClick={handleLogout}
+                                >
+                                    Logout
+                                </button>
 
-</div>
+                            </div>
 
-)}
+                        )}
 
-</div>
+                    </div>
 
-) : (
+                ) : (
 
-<>
+                    <>
 
-<Link className="nav-item login-btn" to="/login">
-Login
-</Link>
+                        <Link className="nav-item login-btn" to="/login">
+                            Login
+                        </Link>
 
-<Link className="nav-item signup-btn" to="/signup">
-Signup
-</Link>
+                        <Link className="nav-item signup-btn" to="/signup">
+                            Signup
+                        </Link>
 
-</>
+                    </>
 
-)}
+                )}
 
-</div>
+            </div>
 
-</nav>
+        </nav>
 
-)
+    )
 
 }
 
