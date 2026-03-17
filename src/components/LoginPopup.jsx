@@ -14,9 +14,7 @@ const user = localStorage.getItem("user")
 if(!user){
 
 setTimeout(()=>{
-
 setShowPopup(true)
-
 },10000)
 
 }
@@ -27,20 +25,34 @@ if(!showPopup || window.location.pathname === "/success") return null
 
 return(
 
-<div className="popup">
+<div className="popup-overlay">
 
-<div className="popup-box">
+<div className="popup-card">
 
-<h3>Login to Book Courts</h3>
+<h2>Login Required</h2>
 
-<p>Create an account to start booking courts</p>
+<p>You must login to book a court.</p>
 
-<button onClick={()=>{
-    setShowPopup(false) 
-    navigate("/login")}}>
-        Login</button>
+<div className="popup-buttons">
 
-<button onClick={()=>setShowPopup(false)}>❌ Close</button>
+<button
+className="login-btn"
+onClick={()=>{
+setShowPopup(false)
+navigate("/login")
+}}
+>
+Login
+</button>
+
+<button
+className="close-btn"
+onClick={()=>setShowPopup(false)}
+>
+Close
+</button>
+
+</div>
 
 </div>
 

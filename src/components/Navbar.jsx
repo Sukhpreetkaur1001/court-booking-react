@@ -54,6 +54,7 @@ function Navbar() {
                 <Link className="nav-item" to="/">Home</Link>
                 <Link className="nav-item" to="/courts">Courts</Link>
                 <Link className="nav-item" to="/booking">Booking</Link>
+                <Link className="nav-item" to="/mybookings">MyBookings</Link>
 
                 {user ? (
 

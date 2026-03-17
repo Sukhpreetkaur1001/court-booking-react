@@ -4,40 +4,80 @@ import "../Styles/courts.css";
 
 function CourtCard({ image, title, location, price }) {
 
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
+  const [showLoginCard, setShowLoginCard] = useState(false);
 
-  const Navigate = useNavigate();
-
-  const today = new Date().toISOString().split("T")[0];
+  const navigate = useNavigate();
 
   const handleBooking = () => {
 
-   
-    // Booking form 
-    Navigate("/booking", {
-      state: { title, price, date, time }
+    const user = localStorage.getItem("user");
+
+    if (!user) {
+      setShowLoginCard(true);
+      return;
+    }
+
+    navigate("/booking", {
+      state: { title, price }
     });
 
   };
 
   return (
 
-    <div className="card">
+    <>
 
-      <img src={image} className="card-img" />
+      <div className="card">
 
-      <h2>{title}</h2>
+        <img src={image} className="card-img" />
 
-      <p>{location}</p>
+        <h2>{title}</h2>
 
-   <p>₹{price}</p>
+        <p>{location}</p>
 
-      <button className="btn" onClick={handleBooking}>
-        Book Court
-      </button>
+        <p>₹{price}</p>
 
-    </div>
+        <button className="btn" onClick={handleBooking}>
+          Book Court
+        </button>
+
+      </div>
+
+      {showLoginCard && (
+
+        <div className="login-overlay">
+
+          <div className="login-card">
+
+            <h2>Login Required</h2>
+
+            <p>Please login first to book a court</p>
+
+            <div className="login-buttons">
+
+              <button
+                className="login-btn"
+                onClick={() => navigate("/login")}
+              >
+                Login
+              </button>
+
+              <button
+                className="close-btn"
+                onClick={() => setShowLoginCard(false)}
+              >
+                Close
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      )}
+
+    </>
 
   );
 }

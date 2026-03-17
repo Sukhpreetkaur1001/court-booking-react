@@ -1,0 +1,39 @@
+.summary-page{
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:70vh;
+}
+
+.summary-card{
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+text-align:center;
+width:400px;
+}
+
+.summary-card h1{
+margin-bottom:20px;
+}
+
+.summary-card p{
+font-size:18px;
+margin:10px 0;
+}
+
+.confirm-btn{
+background:green;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:6px;
+font-size:16px;
+margin-top:20px;
+cursor:pointer;
+}
+
+.confirm-btn:hover{
+background:#0a8a0a;
+}

@@ -10,6 +10,9 @@ import Dashboard from "./pages/Dashboard"
 import LoginPopup from "./components/LoginPopup"
 import ChatBot from "./components/ChatBot"
 import PaymentPage from "./pages/PaymentPage"
+import MyBookings from "./pages/MyBookings"
+import BookingSummary from "./pages/BookingSummary"
+import SuccessPage from "./pages/SuccessPage"
 
 import { Routes, Route } from "react-router-dom"
 
@@ -28,7 +31,10 @@ function App() {
         <Route path="/courts" element={<Courts />} />
         <Route path="/success" element={<BookingSuccess />} />
         <Route path="/booking" element={<Booking />} />
+        <Route path="/mybookings" element={<MyBookings/>}/>
+        <Route path="/summary" element={<BookingSummary/>}/>
         <Route path="/payment" element={<PaymentPage/>} />
+        <Route path="/success" element={<SuccessPage/>}/>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/dashboard" element={<Dashboard />} />

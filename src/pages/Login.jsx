@@ -18,17 +18,17 @@ if(user && user.email === email && user.password === password){
 
 const time = new Date().toLocaleTimeString()
 
+// user login save
+localStorage.setItem("user", JSON.stringify(user))
+
 // login time save
 localStorage.setItem("loginTime",time)
 
-// navbar ko update karne ke liye event
 window.dispatchEvent(new Event("userLogin"))
 
-// fields clear
 setEmail("")
 setPassword("")
 
-// home page
 navigate("/")
 
 }else{
