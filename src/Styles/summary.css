@@ -37,3 +37,50 @@ cursor:pointer;
 .confirm-btn:hover{
 background:#0a8a0a;
 }
+.summary-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background: #f5f7fa;
+}
+
+.summary-card {
+  background: white;
+  padding: 35px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 380px;
+}
+
+.summary-card h1 {
+  margin-bottom: 20px;
+}
+
+.summary-card p {
+  font-size: 17px;
+  margin: 12px 0;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.confirm-btn {
+  background: #00b894;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.confirm-btn:hover {
+  background: #019875;
+}
